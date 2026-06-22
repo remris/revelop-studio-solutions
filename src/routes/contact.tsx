@@ -8,8 +8,7 @@ export const Route = createFileRoute("/contact")({
       { title: "Kontakt — re:velop" },
       {
         name: "description",
-        content:
-          "Schreib dem re:velop Studio. Wir antworten innerhalb von 1–2 Werktagen.",
+        content: "Schreib re:velop. Wir antworten innerhalb von 1–2 Werktagen.",
       },
       { property: "og:title", content: "Kontakt — re:velop" },
       {
@@ -33,8 +32,8 @@ function ContactPage() {
               Erzähl uns von deinem Projekt.
             </h1>
             <p className="mt-6 text-muted-foreground">
-              Idee, Skizze, ganzes Pflichtenheft — alles ist okay. Wir
-              antworten innerhalb von 1–2 Werktagen.
+              Idee, Skizze, ganzes Pflichtenheft — alles ist okay. Wir antworten innerhalb von 1–2
+              Werktagen.
             </p>
             <a
               href="mailto:hello@revelop.dev"
@@ -54,9 +53,7 @@ function ContactPage() {
             {sent ? (
               <div className="py-12 text-center">
                 <div className="text-4xl">✦</div>
-                <h2 className="mt-4 text-xl font-semibold">
-                  Danke, wir melden uns.
-                </h2>
+                <h2 className="mt-4 text-xl font-semibold">Danke, wir melden uns.</h2>
                 <p className="mt-2 text-sm text-muted-foreground">
                   Antwort innerhalb von 1–2 Werktagen.
                 </p>

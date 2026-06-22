@@ -8,12 +8,12 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "App-Entwicklung mit Flutter, Web-Plattformen mit Next.js, MVP- und Produktentwicklung — die Leistungen des re:velop Studios.",
+          "App-Entwicklung, Web-Plattformen, KI-Integration und Corporate Branding — die Leistungen von re:velop aus einer Hand.",
       },
       { property: "og:title", content: "Leistungen — re:velop" },
       {
         property: "og:description",
-        content: "App-, Web- und Produktentwicklung aus einem Studio.",
+        content: "App, Web, KI und Branding aus einer Hand.",
       },
     ],
   }),
@@ -44,6 +44,28 @@ const services = [
     ],
   },
   {
+    label: "OpenAI · LangChain · APIs",
+    title: "KI-Integration",
+    desc: "KI dort eingebaut, wo sie wirklich Mehrwert bringt — Chatbots, intelligente Suche, LLM-Workflows, Automatisierungen und AI-gestützte Features direkt im Produkt.",
+    points: [
+      "Chatbots & Assistenten (RAG)",
+      "LLM-Workflows & Automatisierung",
+      "AI-Features in bestehende Produkte",
+      "Prompt-Engineering & Finetuning",
+    ],
+  },
+  {
+    label: "Identity · Logo · Designsystem",
+    title: "Branding & Design",
+    desc: "Eine starke Marke ist mehr als ein Logo. Wir entwickeln Corporate Identities, die zum Produkt passen — von der Namensfindung bis zum fertigen Designsystem.",
+    points: [
+      "Logo & Corporate Identity",
+      "Designsystem & Styleguide",
+      "Brand-Voice & Messaging",
+      "UI/UX Design in Figma",
+    ],
+  },
+  {
     label: "Discovery → Launch",
     title: "Produkt & MVP",
     desc: "Vom Whiteboard zum Live-Produkt. Wir schärfen Idee, Scope und UX und bringen einen MVP in Wochen statt Monaten an den Markt.",
@@ -62,19 +84,17 @@ function ServicesPage() {
       <section className="border-b border-border/60 py-24">
         <div className="mx-auto max-w-7xl px-6">
           <SectionLabel>Leistungen</SectionLabel>
-          <h1 className="mt-6 max-w-3xl text-5xl font-bold md:text-6xl">
-            Was wir für dich bauen.
-          </h1>
+          <h1 className="mt-6 max-w-3xl text-5xl font-bold md:text-6xl">Was wir für dich bauen.</h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-            Klare Pakete, ehrliche Einschätzungen, sauberer Code. Auswahl statt
-            Bauchladen — das Studio konzentriert sich auf das, was es richtig
-            gut kann.
+            Klare Leistungen, ehrliche Einschätzungen, sauberer Code. re:velop liefert App, Web, KI
+            und Branding aus einer Hand — immer auf das ausgerichtet, was dein Projekt wirklich
+            braucht.
           </p>
         </div>
       </section>
 
       <section className="py-20">
-        <div className="mx-auto grid max-w-7xl gap-6 px-6 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-7xl gap-6 px-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (
             <article
               key={s.title}
@@ -82,9 +102,7 @@ function ServicesPage() {
             >
               <div className="font-mono text-xs text-primary">{s.label}</div>
               <h2 className="mt-3 text-2xl font-semibold">{s.title}</h2>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                {s.desc}
-              </p>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
               <ul className="mt-6 space-y-2 text-sm">
                 {s.points.map((p) => (
                   <li key={p} className="flex gap-3 text-foreground/90">
@@ -100,9 +118,7 @@ function ServicesPage() {
 
       <section className="border-t border-border/60 py-24">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">
-            Passt etwas davon zu deinem Projekt?
-          </h2>
+          <h2 className="text-3xl font-bold md:text-4xl">Passt etwas davon zu deinem Projekt?</h2>
           <Link
             to="/contact"
             className="mt-8 inline-block rounded-full bg-primary px-8 py-3 text-sm font-medium text-primary-foreground"

@@ -5,13 +5,13 @@ import { SiteLayout, SectionLabel } from "@/components/SiteLayout";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "re:velop — Unabhängiges Software-Studio" },
+      { title: "re:velop — Software · KI · Branding" },
       {
         name: "description",
         content:
-          "re:velop ist ein unabhängiges Software-Studio für Produkt- und Auftragsentwicklung. Von der Idee zur produktiven Anwendung.",
+          "re:velop entwickelt Apps, Web-Plattformen, KI-Integrationen und Corporate Branding. Von der Idee zur produktiven Anwendung — schnell, sauber, skalierbar.",
       },
-      { property: "og:title", content: "re:velop — Unabhängiges Software-Studio" },
+      { property: "og:title", content: "re:velop — Software · KI · Branding" },
       {
         property: "og:description",
         content: "Von der Idee zur produktiven Anwendung.",
@@ -28,11 +28,15 @@ const services = [
   },
   {
     title: "Web-Entwicklung",
-    desc: "Schnelle, SEO-starke Plattformen und SaaS-Frontends — gebaut auf moderner Edge-Infrastruktur.",
+    desc: "Schnelle, SEO-starke Plattformen und SaaS-Dashboards — gebaut auf moderner Edge-Infrastruktur.",
   },
   {
-    title: "Eigene Produkte",
-    desc: "Durchdachte SaaS-Werkzeuge vom Konzept bis zum Launch — entwickelt, betrieben und iteriert vom Studio.",
+    title: "KI-Integration",
+    desc: "Intelligente Features direkt ins Produkt eingebaut — Chatbots, Automatisierungen, LLM-Workflows und AI-Schnittstellen.",
+  },
+  {
+    title: "Branding & Design",
+    desc: "Corporate Identity, Logo-Design und Designsysteme — eine klare visuelle Sprache, die zum Produkt passt.",
   },
 ];
 
@@ -60,8 +64,18 @@ const steps = [
 ];
 
 const stack = [
-  "Flutter", "Dart", "Next.js", "React", "TypeScript",
-  "Tailwind", "Vercel", "Edge", "Postgres", "Stripe",
+  "Flutter",
+  "Dart",
+  "Next.js",
+  "React",
+  "TypeScript",
+  "Tailwind",
+  "Vercel",
+  "Edge",
+  "Postgres",
+  "Stripe",
+  "OpenAI",
+  "Figma",
 ];
 
 const faqs = [
@@ -76,6 +90,10 @@ const faqs = [
   {
     q: "Übernehmt ihr auch bestehende Projekte?",
     a: "Ja — wenn der Stack passt. Vorab gibt es immer ein Code-Audit, damit klar ist, was tragfähig ist und wo technische Schuld liegt.",
+  },
+  {
+    q: "Wie nutzt ihr KI in Projekten?",
+    a: "KI ist bei re:velop kein Buzzword, sondern Werkzeug. Vom AI-Copiloten im Entwicklungsprozess bis zum eingebetteten LLM-Feature im Produkt — immer dort eingesetzt, wo es echten Mehrwert bringt.",
   },
   {
     q: "Wem gehört der Code?",
@@ -103,14 +121,12 @@ function HomePage() {
             Verfügbar für neue Projekte ab Q3 2026
           </div>
           <h1 className="mt-8 max-w-4xl text-5xl font-bold leading-[1.05] md:text-7xl">
-            Von der Idee zur{" "}
-            <span className="text-primary">produktiven Anwendung.</span>
+            Von der Idee zur <span className="text-primary">produktiven Anwendung.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground">
-            re:velop ist ein unabhängiges Software-Studio für Produkt- und
-            Auftragsentwicklung. Vom ersten Konzept bis zum Deployment —
-            ein verbindlicher Ansprechpartner und ausgelieferte Software statt
-            Präsentationen.
+            re:velop entwickelt digitale Produkte von Grund auf — Apps, Web-Plattformen,
+            KI-Integrationen und Corporate Branding. Ein verbindlicher Ansprechpartner vom ersten
+            Konzept bis zum Deployment.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Link
@@ -129,15 +145,13 @@ function HomePage() {
 
           <dl className="mt-20 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-border/60 pt-8 md:grid-cols-4">
             {[
-              ["Spezialisierung", "App · Web · SaaS"],
+              ["Leistungen", "App · Web · KI · Branding"],
               ["Hosting", "Vercel · Edge"],
-              ["Fokus", "Produkt & Craft"],
-              ["Team", "Studio · Remote · DE"],
+              ["Fokus", "Produkt & Qualität"],
+              ["Standort", "Remote · Deutschland"],
             ].map(([k, v]) => (
               <div key={k}>
-                <dt className="text-xs uppercase tracking-widest text-muted-foreground">
-                  {k}
-                </dt>
+                <dt className="text-xs uppercase tracking-widest text-muted-foreground">{k}</dt>
                 <dd className="mt-1 font-mono text-sm text-foreground">{v}</dd>
               </div>
             ))}
@@ -152,7 +166,7 @@ function HomePage() {
             <div>
               <SectionLabel>Leistungen</SectionLabel>
               <h2 className="mt-4 max-w-2xl text-4xl font-bold md:text-5xl">
-                Drei Kernbereiche, eine konsistente Handschrift.
+                Vier Kernbereiche, eine konsistente Handschrift.
               </h2>
             </div>
             <Link to="/services" className="text-sm text-primary hover:underline">
@@ -160,19 +174,15 @@ function HomePage() {
             </Link>
           </div>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
+          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {services.map((s, i) => (
               <article
                 key={s.title}
                 className="group relative rounded-2xl border border-border bg-card p-8 transition-colors hover:border-primary/40"
               >
-                <div className="font-mono text-xs text-muted-foreground">
-                  0{i + 1}
-                </div>
+                <div className="font-mono text-xs text-muted-foreground">0{i + 1}</div>
                 <h3 className="mt-3 text-2xl font-semibold">{s.title}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  {s.desc}
-                </p>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
               </article>
             ))}
           </div>
@@ -187,16 +197,12 @@ function HomePage() {
             Vier Schritte. Schlanker Loop, klare Ergebnisse.
           </h2>
           <p className="mt-6 max-w-2xl text-muted-foreground">
-            Jedes Projekt durchläuft denselben fokussierten Prozess. Du weißt zu
-            jedem Zeitpunkt, wo das Studio steht — und was als Nächstes
-            ausgeliefert wird.
+            Jedes Projekt durchläuft denselben fokussierten Prozess. Du weißt zu jedem Zeitpunkt, wo
+            re:velop steht — und was als Nächstes ausgeliefert wird.
           </p>
           <ol className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {steps.map((s) => (
-              <li
-                key={s.n}
-                className="rounded-2xl border border-border bg-background p-6"
-              >
+              <li key={s.n} className="rounded-2xl border border-border bg-background p-6">
                 <div className="font-mono text-sm text-primary">{s.n}</div>
                 <h3 className="mt-4 text-xl font-semibold">{s.title}</h3>
                 <p className="mt-3 text-sm text-muted-foreground">{s.desc}</p>
@@ -214,9 +220,8 @@ function HomePage() {
             Bewährte Technologien. Bewusst gewählt.
           </h2>
           <p className="mt-6 max-w-2xl text-muted-foreground">
-            Kein Framework-Hopping. Das Studio arbeitet tief in einem
-            fokussierten Stack — das spart Zeit, Budget und
-            Architektur-Diskussionen.
+            Kein Framework-Hopping. re:velop arbeitet tief in einem fokussierten Stack — das spart
+            Zeit, Budget und Architektur-Diskussionen.
           </p>
           <ul className="mt-12 flex flex-wrap gap-3 font-mono text-sm">
             {stack.map((t) => (
@@ -235,17 +240,13 @@ function HomePage() {
       <section className="border-t border-border/60 bg-card/30 py-24">
         <div className="mx-auto max-w-4xl px-6">
           <SectionLabel>FAQ</SectionLabel>
-          <h2 className="mt-4 text-4xl font-bold md:text-5xl">
-            Häufig gestellte Fragen.
-          </h2>
+          <h2 className="mt-4 text-4xl font-bold md:text-5xl">Häufig gestellte Fragen.</h2>
           <div className="mt-12 divide-y divide-border border-y border-border">
             {faqs.map((f) => (
               <details key={f.q} className="group py-6">
                 <summary className="flex cursor-pointer list-none items-center justify-between text-lg font-medium">
                   {f.q}
-                  <span className="text-primary transition-transform group-open:rotate-45">
-                    +
-                  </span>
+                  <span className="text-primary transition-transform group-open:rotate-45">+</span>
                 </summary>
                 <p className="mt-4 text-muted-foreground">{f.a}</p>
               </details>
@@ -261,8 +262,7 @@ function HomePage() {
             Du hast eine Idee. <span className="text-primary">Wir bauen sie.</span>
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-muted-foreground">
-            Ob App, Webplattform oder MVP — kurze Wege, klare Kommunikation,
-            ausgelieferte Software.
+            Ob App, Webplattform oder MVP — kurze Wege, klare Kommunikation, ausgelieferte Software.
           </p>
           <Link
             to="/contact"

@@ -81,21 +81,43 @@
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { color-scheme: dark; }
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    color-scheme: dark;
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-display);
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
 }
 
 .grid-bg {
   background-image:
-    radial-gradient(ellipse at top right, color-mix(in oklch, var(--primary) 18%, transparent), transparent 60%),
+    radial-gradient(
+      ellipse at top right,
+      color-mix(in oklch, var(--primary) 18%, transparent),
+      transparent 60%
+    ),
     linear-gradient(to bottom, color-mix(in oklch, var(--primary) 0%, transparent), transparent),
-    repeating-linear-gradient(0deg, color-mix(in oklch, var(--foreground) 4%, transparent) 0 1px, transparent 1px 80px),
-    repeating-linear-gradient(90deg, color-mix(in oklch, var(--foreground) 4%, transparent) 0 1px, transparent 1px 80px);
+    repeating-linear-gradient(
+      0deg,
+      color-mix(in oklch, var(--foreground) 4%, transparent) 0 1px,
+      transparent 1px 80px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in oklch, var(--foreground) 4%, transparent) 0 1px,
+      transparent 1px 80px
+    );
 }

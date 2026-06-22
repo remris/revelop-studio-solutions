@@ -15,7 +15,7 @@ const nav = [
   { to: "/", label: "Start" },
   { to: "/services", label: "Leistungen" },
   { to: "/products", label: "Produkte" },
-  { to: "/about", label: "Studio" },
+  { to: "/about", label: "Über uns" },
   { to: "/contact", label: "Kontakt" },
 ];
 
@@ -51,8 +51,8 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           <div className="md:col-span-2">
             <Logo />
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-              re:velop ist ein unabhängiges Software-Studio für moderne App- und
-              Web-Entwicklung. Produktorientiert. Technisch fundiert. Sauber
+              re:velop entwickelt digitale Produkte — von der App über Web-Plattformen und
+              KI-Integration bis hin zu Corporate Branding. Technisch fundiert. Schnell
               ausgeliefert.
             </p>
           </div>
@@ -80,12 +80,29 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             >
               hello@revelop.dev
             </a>
+            <div className="mt-6">
+              <h4 className="mb-3 text-xs font-medium uppercase tracking-widest text-muted-foreground">
+                Rechtliches
+              </h4>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link to="/impressum" className="text-foreground/80 hover:text-primary">
+                    Impressum
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/datenschutz" className="text-foreground/80 hover:text-primary">
+                    Datenschutz
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <div className="border-t border-border/50">
           <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-6 py-6 text-xs text-muted-foreground md:flex-row md:items-center">
             <p>© {new Date().getFullYear()} re:velop — Alle Rechte vorbehalten.</p>
-            <p className="font-mono">studio · flutter · next.js · edge</p>
+            <p className="font-mono">app · web · ki · branding</p>
           </div>
         </div>
       </footer>

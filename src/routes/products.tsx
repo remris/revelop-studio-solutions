@@ -7,8 +7,7 @@ export const Route = createFileRoute("/products")({
       { title: "Produkte — re:velop" },
       {
         name: "description",
-        content:
-          "Eigene Produkte aus dem re:velop Studio — ehrliche Roadmap von Beta bis Konzept.",
+        content: "Eigene Produkte aus dem re:velop Studio — ehrliche Roadmap von Beta bis Konzept.",
       },
       { property: "og:title", content: "Produkte — re:velop" },
       {
@@ -65,9 +64,8 @@ function ProductsPage() {
             Was als Nächstes <span className="text-primary">live geht.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-            Parallel zu Kundenprojekten entstehen im re:velop Studio eigene
-            Produkte. Manche stehen kurz vor der Beta, andere sind noch
-            Skizzen — hier ist die ehrliche Pipeline.
+            Parallel zu Kundenprojekten entstehen im re:velop Studio eigene Produkte. Manche stehen
+            kurz vor der Beta, andere sind noch Skizzen — hier ist die ehrliche Pipeline.
           </p>
         </div>
       </section>
@@ -80,9 +78,7 @@ function ProductsPage() {
                 key={p.n}
                 className="grid gap-6 py-10 md:grid-cols-[80px_1fr_180px] md:items-center"
               >
-                <div className="font-mono text-2xl text-muted-foreground">
-                  {p.n}
-                </div>
+                <div className="font-mono text-2xl text-muted-foreground">{p.n}</div>
                 <div>
                   <div className="flex flex-wrap items-center gap-3 text-xs">
                     <span className="font-mono uppercase tracking-widest text-primary">
@@ -93,14 +89,10 @@ function ProductsPage() {
                     </span>
                   </div>
                   <h3 className="mt-3 text-2xl font-semibold">{p.name}</h3>
-                  <p className="mt-2 max-w-xl text-sm text-muted-foreground">
-                    {p.desc}
-                  </p>
+                  <p className="mt-2 max-w-xl text-sm text-muted-foreground">{p.desc}</p>
                 </div>
                 <div className="md:text-right">
-                  <div className="text-xs uppercase tracking-widest text-muted-foreground">
-                    ETA
-                  </div>
+                  <div className="text-xs uppercase tracking-widest text-muted-foreground">ETA</div>
                   <div className="mt-1 font-mono text-foreground">{p.eta}</div>
                 </div>
               </li>
@@ -111,12 +103,10 @@ function ProductsPage() {
 
       <section className="border-t border-border/60 py-20">
         <div className="mx-auto max-w-3xl px-6 text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">
-            Frühzugang als Erste:r?
-          </h2>
+          <h2 className="text-3xl font-bold md:text-4xl">Frühzugang als Erste:r?</h2>
           <p className="mt-4 text-muted-foreground">
-            Schreib uns kurz — du landest auf der Closed-Beta-Liste, sobald das
-            jeweilige Produkt bereit ist.
+            Schreib uns kurz — du landest auf der Closed-Beta-Liste, sobald das jeweilige Produkt
+            bereit ist.
           </p>
           <Link
             to="/contact"
