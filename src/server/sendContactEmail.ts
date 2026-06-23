@@ -1,5 +1,4 @@
 import { createServerFn } from "@tanstack/react-start";
-import { Resend } from "resend";
 import { z } from "zod";
 
 const schema = z.object({
@@ -9,9 +8,10 @@ const schema = z.object({
   message: z.string().min(1),
 });
 
-export const sendContactEmail = createServerFn({ method: "POST" })
-  .validator((data: unknown) => schema.parse(data))
-  .handler(async ({ data }) => {
+export const sendContactEmail = createServerFn({ method: "POST" }).handler(
+  async (input: { data: unknown }) => {
+    const data = schema.parse(input.data ?? input);
+    const { Resend } = await import("resend");
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) throw new Error("RESEND_API_KEY nicht gesetzt");
 
@@ -38,5 +38,5 @@ export const sendContactEmail = createServerFn({ method: "POST" })
     });
 
     return { success: true };
-  });
-
+  },
+);
