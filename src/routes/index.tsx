@@ -11,7 +11,7 @@ export const Route = createFileRoute("/")({
         content:
           "re:velop — Freelance Software-Entwicklung für Kunden in ganz Deutschland. Apps, Web-Plattformen und KI-Integration. Von der Idee zur produktiven Anwendung.",
       },
-      { property: "og:title", content: "re:velop — Software · KI · Produkte" },
+      { property: "og:title", content: "re:velop — App · Web · KI · MVP" },
       {
         property: "og:description",
         content: "Von der Idee zur produktiven Anwendung.",
