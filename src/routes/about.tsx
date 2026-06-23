@@ -64,7 +64,7 @@ function AboutPage() {
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground">
             re:velop entwickelt digitale Produkte von Grund auf — Apps, Web-Plattformen,
-            KI-Integrationen und Corporate Branding. Saubere Architektur, durchdachtes UX-Handwerk
+            KI-Integrationen und Branding. Saubere Architektur, durchdachtes UX-Handwerk
             und kurze Time-to-Market. Statt Overhead bekommst du direkten Kontakt, klare
             Kommunikation und ausgelieferte Software.
           </p>

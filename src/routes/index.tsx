@@ -131,7 +131,7 @@ function HomePage() {
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground">
             re:velop entwickelt digitale Produkte von Grund auf — Apps, Web-Plattformen,
-            KI-Integrationen und Corporate Branding. Ein verbindlicher Ansprechpartner vom ersten
+            KI-Integrationen und Branding. Ein verbindlicher Ansprechpartner vom ersten
             Konzept bis zum Deployment.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
