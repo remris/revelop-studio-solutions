@@ -22,12 +22,11 @@ function ImpressumPage() {
                 Angaben gemäß § 5 TMG
               </h2>
               <p>
-                {/* TODO: Deinen vollständigen Namen oder Firmennamen eintragen */}
-                [Vorname Nachname / Firmenname]
+                Christian Remmele
                 <br />
-                [Straße Hausnummer]
+                Eichenmühleweg 23
                 <br />
-                [PLZ Ort]
+                88048 Friedrichshafen
                 <br />
                 Deutschland
               </p>
@@ -37,34 +36,31 @@ function ImpressumPage() {
               <h2 className="mb-3 text-base font-semibold text-foreground">Kontakt</h2>
               <p>
                 E-Mail:{" "}
-                <a href="mailto:hello@revelop.dev" className="text-primary hover:underline">
-                  hello@revelop.dev
+                <a href="mailto:hello@re-velop.de" className="text-primary hover:underline">
+                  hello@re-velop.de
                 </a>
+                {/* Telefon: wird nachgereicht */}
               </p>
             </div>
 
-            <div>
+            {/* Steuerliche Angaben werden nachgereicht, sobald eine Steuernummer vorliegt */}
+            {/* <div>
               <h2 className="mb-3 text-base font-semibold text-foreground">Steuerliche Angaben</h2>
               <p>
-                {/* TODO: Steuernummer oder USt-IdNr eintragen */}
-                Steuernummer: [Steuernummer]
-                <br />
-                {/* Falls vorhanden: */}
-                {/* Umsatzsteuer-Identifikationsnummer gem. § 27a UStG: DE... */}
+                Steuernummer: [wird nachgereicht]
               </p>
-            </div>
+            </div> */}
 
             <div>
               <h2 className="mb-3 text-base font-semibold text-foreground">
                 Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
               </h2>
               <p>
-                {/* TODO: Name und Adresse eintragen */}
-                [Vorname Nachname]
+                Christian Remmele
                 <br />
-                [Straße Hausnummer]
+                Eichenmühleweg 23
                 <br />
-                [PLZ Ort]
+                88048 Friedrichshafen
               </p>
             </div>
 

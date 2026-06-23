@@ -16,6 +16,7 @@ export const Route = createFileRoute("/contact")({
         content: "Erzähl uns von deinem Projekt.",
       },
     ],
+    links: [{ rel: "canonical", href: "https://re-velop.de/contact" }],
   }),
   component: ContactPage,
 });

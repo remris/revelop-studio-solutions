@@ -15,7 +15,13 @@ export const Route = createFileRoute("/about")({
         property: "og:description",
         content: "Technisch. Produktorientiert. KI-gestützt.",
       },
+      {
+        name: "keywords",
+        content:
+          "re:velop, Freelance Entwickler Deutschland, App Entwicklung Remote, KI Integration Freelancer, Flutter Entwickler, IT Beratung Friedrichshafen, Software Entwicklung Bodensee, Web Entwicklung Freelancer, Branding Freelancer, MVP Entwicklung Deutschland",
+      },
     ],
+    links: [{ rel: "canonical", href: "https://re-velop.de/about" }],
   }),
   component: AboutPage,
 });

@@ -72,28 +72,97 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "re:velop",
+  url: "https://re-velop.de",
+  email: "hello@re-velop.de",
+  description:
+    "Freelance Software-Entwicklung — Apps, Web-Plattformen, KI-Integration und Branding. Remote für Kunden in ganz Deutschland. Ansässig in Friedrichshafen am Bodensee.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Eichenmühleweg 23",
+    addressLocality: "Friedrichshafen",
+    postalCode: "88048",
+    addressCountry: "DE",
+    addressRegion: "Baden-Württemberg",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: "47.6553",
+    longitude: "9.4786",
+  },
+  areaServed: [
+    { "@type": "City", name: "Friedrichshafen" },
+    { "@type": "City", name: "Ravensburg" },
+    { "@type": "City", name: "Überlingen" },
+    { "@type": "City", name: "Lindau" },
+    { "@type": "City", name: "Konstanz" },
+    { "@type": "City", name: "Meersburg" },
+    { "@type": "AdministrativeArea", name: "Bodenseekreis" },
+    { "@type": "AdministrativeArea", name: "Baden-Württemberg" },
+    { "@type": "Country", name: "Deutschland" },
+  ],
+  knowsAbout: [
+    "App-Entwicklung",
+    "Web-Entwicklung",
+    "KI-Integration",
+    "Branding",
+    "IT-Beratung",
+    "Flutter",
+    "Next.js",
+    "TypeScript",
+    "iOS Entwicklung",
+    "Android Entwicklung",
+    "React",
+    "MVP Entwicklung",
+    "SaaS Entwicklung",
+    "Digitalisierung",
+    "Webdesign",
+  ],
+};
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "re:velop — Unabhängiges Software-Studio" },
+      { title: "re:velop — App · Web · KI · Branding" },
       {
         name: "description",
         content:
-          "re:velop ist ein unabhängiges Software-Studio für Produkt- und Auftragsentwicklung. Von der Idee zur produktiven Anwendung.",
+          "Freelance Software-Entwicklung — Apps, Web-Plattformen, KI-Integration und Branding. Remote verfügbar für Kunden in ganz Deutschland. Ansässig in Friedrichshafen am Bodensee.",
+      },
+      {
+        name: "keywords",
+        content:
+          "Software Entwicklung Friedrichshafen, App Entwicklung Bodenseekreis, Web Entwicklung Friedrichshafen, IT Beratung Bodenseekreis, Freelancer Bodensee, KI Integration Friedrichshafen, Flutter Entwickler Bodensee, App Entwicklung Bodensee, Software Fischbach, Webseite erstellen Friedrichshafen, Webdesign Friedrichshafen, iOS Entwicklung Bodensee, Android Entwicklung Bodenseekreis, Mobile App Bodensee, MVP Entwicklung, SaaS Entwicklung Freelancer, Digitalisierung Bodenseekreis, IT Dienstleistungen Friedrichshafen, Software Entwicklung Ravensburg, Web Entwicklung Überlingen, App Entwicklung Lindau, Software Entwicklung Konstanz, Freelancer Süddeutschland, React Entwickler Bodensee, TypeScript Entwickler, Freelance Entwickler Deutschland, Remote Software Entwicklung, App Entwicklung Freelancer Deutschland, KI Integration Deutschland, Flutter Entwickler Deutschland, Next.js Freelancer Deutschland, Startup Entwicklung, Branding Freelancer, Mobile App Entwicklung Deutschland, Web Entwicklung Remote, Freelance App Entwickler, Softwareentwicklung Freelancer, KI Entwickler Freelancer, MVP Entwickler Deutschland, SaaS Entwicklung Deutschland",
       },
       { name: "author", content: "re:velop" },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://re-velop.de/" },
+      { property: "og:site_name", content: "re:velop" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "geo.region", content: "DE-BW" },
+      { name: "geo.placename", content: "Friedrichshafen, Bodenseekreis" },
+      { name: "geo.position", content: "47.6553;9.4786" },
+      { name: "ICBM", content: "47.6553, 9.4786" },
     ],
     links: [
+      { rel: "canonical", href: "https://re-velop.de/" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(jsonLd),
       },
     ],
   }),

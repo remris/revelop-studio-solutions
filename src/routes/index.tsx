@@ -9,14 +9,20 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "re:velop entwickelt Apps, Web-Plattformen, KI-Integrationen und Corporate Branding. Von der Idee zur produktiven Anwendung — schnell, sauber, skalierbar.",
+          "re:velop — Freelance Software-Entwicklung für Kunden in ganz Deutschland. Apps, Web-Plattformen, KI-Integration und Branding. Von der Idee zur produktiven Anwendung.",
       },
       { property: "og:title", content: "re:velop — Software · KI · Branding" },
       {
         property: "og:description",
         content: "Von der Idee zur produktiven Anwendung.",
       },
+      {
+        name: "keywords",
+        content:
+          "Software Entwicklung, App Entwicklung, Web Entwicklung, KI Integration, Freelancer, Flutter, Next.js, Friedrichshafen, Deutschland",
+      },
     ],
+    links: [{ rel: "canonical", href: "https://re-velop.de/" }],
   }),
   component: HomePage,
 });
@@ -36,7 +42,7 @@ const services = [
   },
   {
     title: "Branding & Design",
-    desc: "Corporate Identity, Logo-Design und Designsysteme — eine klare visuelle Sprache, die zum Produkt passt.",
+    desc: "Klare visuelle Identität mit KI-Unterstützung — Logo, Corporate Identity und Designsystem ohne Agentur-Overhead.",
   },
 ];
 
@@ -166,7 +172,7 @@ function HomePage() {
             <div>
               <SectionLabel>Leistungen</SectionLabel>
               <h2 className="mt-4 max-w-2xl text-4xl font-bold md:text-5xl">
-                Vier Kernbereiche, eine konsistente Handschrift.
+                Klare Leistungen, eine konsistente Handschrift.
               </h2>
             </div>
             <Link to="/services" className="text-sm text-primary hover:underline">
