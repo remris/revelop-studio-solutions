@@ -153,10 +153,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "theme-color", content: "#00aaff" },
     ],
     links: [
-      // Primary: PNG favicon (32x32) — more compatible in some browsers/tabs
-      { rel: "icon", href: "/favicon-re.png", type: "image/png", sizes: "32x32" },
-      // SVG for modern sharp rendering
+      // Prefer SVG for modern browsers (sharp, scalable)
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml", sizes: "any" },
+      // Primary PNG fallback (32x32)
+      { rel: "icon", href: "/favicon-re.png", type: "image/png", sizes: "32x32" },
       // Larger PNG fallback for PWA/Android
       { rel: "icon", href: "/favicon-re.png", type: "image/png", sizes: "192x192" },
       { rel: "shortcut icon", href: "/favicon-re.png" },
