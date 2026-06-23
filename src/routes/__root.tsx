@@ -136,7 +136,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "keywords",
         content:
-          "Software Entwicklung Friedrichshafen, App Entwicklung Bodenseekreis, Web Entwicklung Friedrichshafen, IT Beratung Bodenseekreis, Freelancer Bodensee, KI Integration Friedrichshafen, Flutter Entwickler Bodensee, App Entwicklung Bodensee, Software Fischbach, Webseite erstellen Friedrichshafen, Webdesign Friedrichshafen, iOS Entwicklung Bodensee, Android Entwicklung Bodenseekreis, Mobile App Bodensee, MVP Entwicklung, SaaS Entwicklung Freelancer, Digitalisierung Bodenseekreis, IT Dienstleistungen Friedrichshafen, Software Entwicklung Ravensburg, Web Entwicklung Überlingen, App Entwicklung Lindau, Software Entwicklung Konstanz, Freelancer Süddeutschland, React Entwickler Bodensee, TypeScript Entwickler, Freelance Entwickler Deutschland, Remote Software Entwicklung, App Entwicklung Freelancer Deutschland, KI Integration Deutschland, Flutter Entwickler Deutschland, Next.js Freelancer Deutschland, Startup Entwicklung, Mobile App Entwicklung Deutschland, Web Entwicklung Remote, Freelance App Entwickler, Softwareentwicklung Freelancer, KI Entwickler Freelancer, MVP Entwickler Deutschland, SaaS Entwicklung Deutschland",
+          "Software Entwicklung Friedrichshafen, App Entwicklung Bodenseekreis, Web Entwicklung Friedrichshafen, IT Beratung Bodenseekreis, Freelancer Bodensee, KI Integration Friedrichshafen, Flutter Entwickler Bodensee, App Entwicklung Bodensee, Software Fischbach, Webseite erstellen Friedrichshafen, Webdesign Friedrichshafen, iOS Entwicklung Bodensee, Android Entwicklung Bodenseekreis, Mobile App Bodensee, MVP Entwicklung, SaaS Development Freelancer, Digitalisierung Bodenseekreis, IT Dienstleistungen Friedrichshafen, Software Entwicklung Ravensburg, Web Entwicklung Überlingen, App Entwicklung Lindau, Software Entwicklung Konstanz, Freelancer Süddeutschland, React Entwickler Bodensee, TypeScript Entwickler, Freelance Entwickler Deutschland, Remote Software Entwicklung, App Entwicklung Freelancer Deutschland, KI Integration Deutschland, Flutter Entwickler Deutschland, Next.js Freelancer Deutschland, Startup Entwicklung, Mobile App Entwicklung Deutschland, Web Entwicklung Remote, Freelance App Entwickler, Softwareentwicklung Freelancer, KI Entwickler Freelancer, MVP Entwickler Deutschland, SaaS Entwicklung Deutschland",
       },
       { name: "author", content: "re:velop" },
       { property: "og:type", content: "website" },
@@ -147,6 +147,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "geo.placename", content: "Friedrichshafen, Bodenseekreis" },
       { name: "geo.position", content: "47.6553;9.4786" },
       { name: "ICBM", content: "47.6553, 9.4786" },
+      // Theme color for mobile browsers / Chrome on Android
+      { name: "theme-color", content: "#00aaff" },
     ],
     links: [
       { rel: "canonical", href: "https://re-velop.de/" },
@@ -157,6 +159,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
       },
+      // Favicons / app icons
+      { rel: "icon", href: "/favicon-re.png", type: "image/png" },
+      { rel: "shortcut icon", href: "/favicon-re.png" },
+      { rel: "apple-touch-icon", href: "/favicon-re.png" },
     ],
     scripts: [
       {
