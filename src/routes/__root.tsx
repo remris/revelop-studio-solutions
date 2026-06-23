@@ -153,6 +153,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "theme-color", content: "#00aaff" },
     ],
     links: [
+      // Primary: PNG favicon (32x32) — more compatible in some browsers/tabs
+      { rel: "icon", href: "/favicon-re.png", type: "image/png", sizes: "32x32" },
+      // SVG for modern sharp rendering
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml", sizes: "any" },
+      // Larger PNG fallback for PWA/Android
+      { rel: "icon", href: "/favicon-re.png", type: "image/png", sizes: "192x192" },
+      { rel: "shortcut icon", href: "/favicon-re.png" },
+      { rel: "apple-touch-icon", href: "/favicon-re.png", sizes: "180x180" },
+      // Safari pinned tab (uses monochrome SVG, color accents)
+      { rel: "mask-icon", href: "/favicon.svg", color: "#00aaff" },
       { rel: "canonical", href: "https://re-velop.de/" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -161,10 +171,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
       },
-      // Favicons / app icons
-      { rel: "icon", href: "/favicon-re.png", type: "image/png" },
-      { rel: "shortcut icon", href: "/favicon-re.png" },
-      { rel: "apple-touch-icon", href: "/favicon-re.png" },
     ],
     scripts: [
       {
@@ -184,6 +190,7 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="de" className="dark">
       <head>
+        <title>re:velop — App · Web · KI · MVP</title>
         <HeadContent />
       </head>
       <body>
