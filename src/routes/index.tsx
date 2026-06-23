@@ -5,13 +5,13 @@ import { SiteLayout, SectionLabel } from "@/components/SiteLayout";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "re:velop — Software · KI · Branding" },
+      { title: "re:velop — Software · KI · Produkte" },
       {
         name: "description",
         content:
-          "re:velop — Freelance Software-Entwicklung für Kunden in ganz Deutschland. Apps, Web-Plattformen, KI-Integration und Branding. Von der Idee zur produktiven Anwendung.",
+          "re:velop — Freelance Software-Entwicklung für Kunden in ganz Deutschland. Apps, Web-Plattformen und KI-Integration. Von der Idee zur produktiven Anwendung.",
       },
-      { property: "og:title", content: "re:velop — Software · KI · Branding" },
+      { property: "og:title", content: "re:velop — Software · KI · Produkte" },
       {
         property: "og:description",
         content: "Von der Idee zur produktiven Anwendung.",
@@ -19,8 +19,7 @@ export const Route = createFileRoute("/")({
       {
         name: "keywords",
         content:
-          "Software Entwicklung, App Entwicklung, Web Entwicklung, KI Integration, Freelancer, Flutter, Next.js, Friedrichshafen, Deutschland",
-      },
+          "Software Entwicklung, App Entwicklung, Web Entwicklung, KI Integration, Freelancer, Flutter, Next.js, Friedrichshafen, Deutschland",      },
     ],
     links: [{ rel: "canonical", href: "https://re-velop.de/" }],
   }),
@@ -41,8 +40,8 @@ const services = [
     desc: "Intelligente Features direkt ins Produkt eingebaut — Chatbots, Automatisierungen, LLM-Workflows und AI-Schnittstellen.",
   },
   {
-    title: "Branding & Design",
-    desc: "Klare visuelle Identität mit KI-Unterstützung — Logo, Corporate Identity und Designsystem ohne Agentur-Overhead.",
+    title: "Produkt & MVP",
+    desc: "Vom Konzept zum Live-Produkt in Wochen statt Monaten — klarer Scope, wöchentliche Releases, messbares Ergebnis.",
   },
 ];
 
@@ -151,7 +150,7 @@ function HomePage() {
 
           <dl className="mt-20 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-border/60 pt-8 md:grid-cols-4">
             {[
-              ["Leistungen", "App · Web · KI · Branding"],
+              ["Leistungen", "App · Web · KI · MVP"],
               ["Hosting", "Vercel · Edge"],
               ["Fokus", "Produkt & Qualität"],
               ["Standort", "Remote · Deutschland"],

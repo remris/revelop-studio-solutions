@@ -8,17 +8,17 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-      "App-Entwicklung, Web-Plattformen, KI-Integration, SEA und Branding — die Leistungen von re:velop aus einer Hand.",
+          "App-Entwicklung, Web-Plattformen, KI-Integration und MVP — die Leistungen von re:velop aus einer Hand.",
       },
       { property: "og:title", content: "Leistungen — re:velop" },
       {
         property: "og:description",
-        content: "App, Web, KI und Branding aus einer Hand.",
+        content: "App, Web und KI aus einer Hand.",
       },
       {
         name: "keywords",
         content:
-          "App Entwicklung, Web Entwicklung, KI Integration, Branding, Flutter, Next.js, Freelancer Deutschland",
+          "App Entwicklung, Web Entwicklung, KI Integration, Flutter, Next.js, Freelancer Deutschland",
       },
     ],
     links: [{ rel: "canonical", href: "https://re-velop.de/services" }],
@@ -60,17 +60,6 @@ const services = [
       "Prompt-Engineering & Finetuning",
     ],
   },
-  {
-    label: "AI-Assisted · Figma · Identity",
-    title: "Branding & Design",
-    desc: "Klare visuelle Identität ohne Agentur-Overhead. Mit KI-Tools entstehen Logo-Konzepte, Designsysteme und Brand Voices schnell, kosteneffizient und mit echtem Wiedererkennungswert.",
-    points: [
-      "Logo & Corporate Identity",
-      "Designsystem & Styleguide",
-      "Brand-Voice & Messaging",
-      "AI-gestützte Konzeptentwicklung",
-    ],
-  },
 
   {
     label: "Discovery → Launch",
@@ -93,8 +82,8 @@ function ServicesPage() {
           <SectionLabel>Leistungen</SectionLabel>
           <h1 className="mt-6 max-w-3xl text-5xl font-bold md:text-6xl">Was wir für dich bauen.</h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-            Klare Leistungen, ehrliche Einschätzungen, sauberer Code. re:velop liefert App, Web, KI,
-            SEA und Branding aus einer Hand — immer auf das ausgerichtet, was dein Projekt wirklich
+            Klare Leistungen, ehrliche Einschätzungen, sauberer Code. re:velop liefert App, Web, KI
+            und MVP aus einer Hand — immer auf das ausgerichtet, was dein Projekt wirklich
             braucht.
           </p>
         </div>

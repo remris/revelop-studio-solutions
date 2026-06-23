@@ -51,8 +51,8 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           <div className="md:col-span-2">
             <Logo />
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-              re:velop entwickelt digitale Produkte — von der App über Web-Plattformen und
-              KI-Integration bis hin zu Branding. Technisch fundiert. Schnell
+              re:velop entwickelt digitale Produkte — von der App über Web-Plattformen bis hin zu
+              KI-Integration. Technisch fundiert. Schnell
               ausgeliefert.
             </p>
           </div>
@@ -102,7 +102,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
         <div className="border-t border-border/50">
           <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-6 py-6 text-xs text-muted-foreground md:flex-row md:items-center">
             <p>© {new Date().getFullYear()} re:velop — Alle Rechte vorbehalten.</p>
-            <p className="font-mono">app · web · ki · branding</p>
+            <p className="font-mono">app · web · ki · mvp</p>
           </div>
         </div>
       </footer>

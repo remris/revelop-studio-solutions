@@ -79,7 +79,7 @@ const jsonLd = {
   url: "https://re-velop.de",
   email: "hello@re-velop.de",
   description:
-    "Freelance Software-Entwicklung — Apps, Web-Plattformen, KI-Integration und Branding. Remote für Kunden in ganz Deutschland. Ansässig in Friedrichshafen am Bodensee.",
+    "Freelance Software-Entwicklung — Apps, Web-Plattformen und KI-Integration. Remote für Kunden in ganz Deutschland. Ansässig in Friedrichshafen am Bodensee.",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Eichenmühleweg 23",
@@ -108,7 +108,6 @@ const jsonLd = {
     "App-Entwicklung",
     "Web-Entwicklung",
     "KI-Integration",
-    "Branding",
     "IT-Beratung",
     "Flutter",
     "Next.js",
@@ -128,16 +127,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "re:velop — App · Web · KI · Branding" },
+      { title: "re:velop — App · Web · KI · MVP" },
       {
         name: "description",
         content:
-          "Freelance Software-Entwicklung — Apps, Web-Plattformen, KI-Integration und Branding. Remote verfügbar für Kunden in ganz Deutschland. Ansässig in Friedrichshafen am Bodensee.",
+          "Freelance Software-Entwicklung — Apps, Web-Plattformen und KI-Integration. Remote verfügbar für Kunden in ganz Deutschland. Ansässig in Friedrichshafen am Bodensee.",
       },
       {
         name: "keywords",
         content:
-          "Software Entwicklung Friedrichshafen, App Entwicklung Bodenseekreis, Web Entwicklung Friedrichshafen, IT Beratung Bodenseekreis, Freelancer Bodensee, KI Integration Friedrichshafen, Flutter Entwickler Bodensee, App Entwicklung Bodensee, Software Fischbach, Webseite erstellen Friedrichshafen, Webdesign Friedrichshafen, iOS Entwicklung Bodensee, Android Entwicklung Bodenseekreis, Mobile App Bodensee, MVP Entwicklung, SaaS Entwicklung Freelancer, Digitalisierung Bodenseekreis, IT Dienstleistungen Friedrichshafen, Software Entwicklung Ravensburg, Web Entwicklung Überlingen, App Entwicklung Lindau, Software Entwicklung Konstanz, Freelancer Süddeutschland, React Entwickler Bodensee, TypeScript Entwickler, Freelance Entwickler Deutschland, Remote Software Entwicklung, App Entwicklung Freelancer Deutschland, KI Integration Deutschland, Flutter Entwickler Deutschland, Next.js Freelancer Deutschland, Startup Entwicklung, Branding Freelancer, Mobile App Entwicklung Deutschland, Web Entwicklung Remote, Freelance App Entwickler, Softwareentwicklung Freelancer, KI Entwickler Freelancer, MVP Entwickler Deutschland, SaaS Entwicklung Deutschland",
+          "Software Entwicklung Friedrichshafen, App Entwicklung Bodenseekreis, Web Entwicklung Friedrichshafen, IT Beratung Bodenseekreis, Freelancer Bodensee, KI Integration Friedrichshafen, Flutter Entwickler Bodensee, App Entwicklung Bodensee, Software Fischbach, Webseite erstellen Friedrichshafen, Webdesign Friedrichshafen, iOS Entwicklung Bodensee, Android Entwicklung Bodenseekreis, Mobile App Bodensee, MVP Entwicklung, SaaS Entwicklung Freelancer, Digitalisierung Bodenseekreis, IT Dienstleistungen Friedrichshafen, Software Entwicklung Ravensburg, Web Entwicklung Überlingen, App Entwicklung Lindau, Software Entwicklung Konstanz, Freelancer Süddeutschland, React Entwickler Bodensee, TypeScript Entwickler, Freelance Entwickler Deutschland, Remote Software Entwicklung, App Entwicklung Freelancer Deutschland, KI Integration Deutschland, Flutter Entwickler Deutschland, Next.js Freelancer Deutschland, Startup Entwicklung, Mobile App Entwicklung Deutschland, Web Entwicklung Remote, Freelance App Entwickler, Softwareentwicklung Freelancer, KI Entwickler Freelancer, MVP Entwickler Deutschland, SaaS Entwicklung Deutschland",
       },
       { name: "author", content: "re:velop" },
       { property: "og:type", content: "website" },

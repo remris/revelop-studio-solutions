@@ -8,7 +8,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "re:velop entwickelt Apps, Web-Plattformen, KI-Integrationen und Branding. Technisch. Produktorientiert. Mit KI-Rückenwind.",
+          "re:velop entwickelt Apps, Web-Plattformen und KI-Integrationen. Technisch. Produktorientiert. Mit KI-Rückenwind.",
       },
       { property: "og:title", content: "Über re:velop" },
       {
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "keywords",
         content:
-          "re:velop, Freelance Entwickler Deutschland, App Entwicklung Remote, KI Integration Freelancer, Flutter Entwickler, IT Beratung Friedrichshafen, Software Entwicklung Bodensee, Web Entwicklung Freelancer, Branding Freelancer, MVP Entwicklung Deutschland",
+          "re:velop, Freelance Entwickler Deutschland, App Entwicklung Remote, KI Integration Freelancer, Flutter Entwickler, IT Beratung Friedrichshafen, Software Entwicklung Bodensee, Web Entwicklung Freelancer, MVP Entwicklung Deutschland",
       },
     ],
     links: [{ rel: "canonical", href: "https://re-velop.de/about" }],
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/about")({
 const stack = [
   { k: "Mobile", v: "Flutter / Dart" },
   { k: "Web", v: "Next.js / TypeScript" },
-  { k: "UI & Branding", v: "Tailwind / Figma" },
+  { k: "UI & Design", v: "Tailwind / Figma" },
   { k: "KI", v: "OpenAI / LangChain" },
   { k: "Backend", v: "Node · Postgres · Supabase" },
   { k: "Hosting", v: "Vercel · Edge" },
@@ -63,8 +63,8 @@ function AboutPage() {
             Technisch. Produktorientiert. <span className="text-primary">KI-gestützt.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground">
-            re:velop entwickelt digitale Produkte von Grund auf — Apps, Web-Plattformen,
-            KI-Integrationen und Branding. Saubere Architektur, durchdachtes UX-Handwerk
+            re:velop entwickelt digitale Produkte von Grund auf — Apps, Web-Plattformen und
+            KI-Integrationen. Saubere Architektur, durchdachtes UX-Handwerk
             und kurze Time-to-Market. Statt Overhead bekommst du direkten Kontakt, klare
             Kommunikation und ausgelieferte Software.
           </p>
