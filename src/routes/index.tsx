@@ -123,7 +123,7 @@ function HomePage() {
         <div className="mx-auto max-w-7xl px-6 pt-24 pb-28 md:pt-32 md:pb-36">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs text-primary">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
-            Verfügbar für neue Projekte ab Q3 2026
+            Verfügbar für neue Projekte
           </div>
           <h1 className="mt-8 max-w-4xl text-5xl font-bold leading-[1.05] md:text-7xl">
             Von der Idee zur <span className="text-primary">produktiven Anwendung.</span>
