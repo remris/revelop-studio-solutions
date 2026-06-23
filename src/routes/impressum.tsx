@@ -36,8 +36,8 @@ function ImpressumPage() {
               <h2 className="mb-3 text-base font-semibold text-foreground">Kontakt</h2>
               <p>
                 E-Mail:{" "}
-                <a href="mailto:hello@re-velop.de" className="text-primary hover:underline">
-                  hello@re-velop.de
+                <a href="mailto:kontakt@re-velop.de" className="text-primary hover:underline">
+                  kontakt@re-velop.de
                 </a>
                 {/* Telefon: wird nachgereicht */}
               </p>

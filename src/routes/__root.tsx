@@ -77,7 +77,7 @@ const jsonLd = {
   "@type": "ProfessionalService",
   name: "re:velop",
   url: "https://re-velop.de",
-  email: "hello@re-velop.de",
+  email: "kontakt@re-velop.de",
   description:
     "Freelance Software-Entwicklung — Apps, Web-Plattformen und KI-Integration. Remote für Kunden in ganz Deutschland. Ansässig in Friedrichshafen am Bodensee.",
   address: {

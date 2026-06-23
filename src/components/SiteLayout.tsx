@@ -75,10 +75,10 @@ export function SiteLayout({ children }: { children: ReactNode }) {
               Kontakt
             </h4>
             <a
-              href="mailto:hello@re-velop.de"
+              href="mailto:kontakt@re-velop.de"
               className="text-sm text-foreground/80 hover:text-primary"
             >
-              hello@re-velop.de
+              kontakt@re-velop.de
             </a>
             <div className="mt-6">
               <h4 className="mb-3 text-xs font-medium uppercase tracking-widest text-muted-foreground">

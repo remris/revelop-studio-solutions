@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { SiteLayout, SectionLabel } from "@/components/SiteLayout";
+import { sendContactEmail } from "@/server/sendContactEmail";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -23,6 +24,31 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setError(null);
+    setLoading(true);
+    const fd = new FormData(e.currentTarget);
+    try {
+      await sendContactEmail({
+        data: {
+          name: fd.get("name") as string,
+          email: fd.get("email") as string,
+          type: fd.get("type") as string,
+          message: fd.get("message") as string,
+        },
+      });
+      setSent(true);
+    } catch {
+      setError("Senden fehlgeschlagen — bitte direkt per E-Mail melden.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
     <SiteLayout>
       <section className="py-24">
@@ -37,18 +63,15 @@ function ContactPage() {
               Werktagen.
             </p>
             <a
-              href="mailto:hello@revelop.dev"
+              href="mailto:kontakt@re-velop.de"
               className="mt-10 inline-flex items-center gap-3 rounded-full border border-border bg-card px-5 py-3 font-mono text-sm text-foreground hover:border-primary/50"
             >
-              hello@revelop.dev
+              kontakt@re-velop.de
             </a>
           </div>
 
           <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              setSent(true);
-            }}
+            onSubmit={handleSubmit}
             className="rounded-2xl border border-border bg-card p-8"
           >
             {sent ? (
@@ -63,12 +86,14 @@ function ContactPage() {
               <div className="space-y-5">
                 <Field label="Name">
                   <input
+                    name="name"
                     required
                     className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm outline-none focus:border-primary"
                   />
                 </Field>
                 <Field label="E-Mail">
                   <input
+                    name="email"
                     type="email"
                     required
                     className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm outline-none focus:border-primary"
@@ -76,6 +101,8 @@ function ContactPage() {
                 </Field>
                 <Field label="Projekttyp">
                   <select
+                    name="type"
+                    required
                     className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm outline-none focus:border-primary"
                     defaultValue=""
                   >
@@ -84,22 +111,30 @@ function ContactPage() {
                     </option>
                     <option>App-Entwicklung</option>
                     <option>Web-Entwicklung</option>
+                    <option>KI-Integration</option>
                     <option>Beratung / MVP</option>
                     <option>Sonstiges</option>
                   </select>
                 </Field>
                 <Field label="Worum geht's?">
                   <textarea
+                    name="message"
                     rows={5}
                     required
                     className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm outline-none focus:border-primary"
                   />
                 </Field>
+                {error && (
+                  <p className="rounded-lg bg-destructive/10 px-4 py-3 text-sm text-destructive">
+                    {error}
+                  </p>
+                )}
                 <button
                   type="submit"
-                  className="w-full rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground"
+                  disabled={loading}
+                  className="w-full rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground disabled:opacity-60"
                 >
-                  Anfrage senden →
+                  {loading ? "Wird gesendet …" : "Anfrage senden →"}
                 </button>
               </div>
             )}
