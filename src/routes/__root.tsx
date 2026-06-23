@@ -191,6 +191,9 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="de" className="dark">
       <head>
         <title>re:velop — App · Web · KI · MVP</title>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon-re.png" type="image/png" sizes="32x32" />
+        <link rel="apple-touch-icon" href="/favicon-re.png" sizes="180x180" />
         <HeadContent />
       </head>
       <body>
