@@ -150,7 +150,7 @@ function HomePage() {
 
           <dl className="mt-20 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-border/60 pt-8 md:grid-cols-4">
             {[
-              ["Leistungen", "App · Web · KI · MVP"],
+              ["Leistungen", "App · Web · KI"],
               ["Hosting", "Vercel · Edge"],
               ["Fokus", "Produkt & Qualität"],
               ["Standort", "Remote · Deutschland"],
