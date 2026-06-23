@@ -36,7 +36,7 @@ const sendEmail = createServerFn({ method: "POST" }).handler(
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "re:velop Kontaktformular <onboarding@resend.dev>",
+        from: "revelop Kontaktformular <onboarding@resend.dev>",
         to: "kontakt@re-velop.de",
         reply_to: email,
         subject: `Neue Anfrage: ${type} — ${name}`,
@@ -92,8 +92,8 @@ function ContactPage() {
         },
       });
       setSent(true);
-    } catch {
-      setError("Senden fehlgeschlagen — bitte direkt per E-Mail melden.");
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Senden fehlgeschlagen — bitte direkt per E-Mail melden.");
     } finally {
       setLoading(false);
     }
