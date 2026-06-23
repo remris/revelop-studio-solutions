@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { SiteLayout, SectionLabel } from "@/components/SiteLayout";
-import { sendContactEmail } from "@/server/sendContactEmail";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -33,14 +32,17 @@ function ContactPage() {
     setLoading(true);
     const fd = new FormData(e.currentTarget);
     try {
-      await sendContactEmail({
-        data: {
-          name: fd.get("name") as string,
-          email: fd.get("email") as string,
-          type: fd.get("type") as string,
-          message: fd.get("message") as string,
-        },
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: fd.get("name"),
+          email: fd.get("email"),
+          type: fd.get("type"),
+          message: fd.get("message"),
+        }),
       });
+      if (!res.ok) throw new Error();
       setSent(true);
     } catch {
       setError("Senden fehlgeschlagen — bitte direkt per E-Mail melden.");
@@ -70,10 +72,7 @@ function ContactPage() {
             </a>
           </div>
 
-          <form
-            onSubmit={handleSubmit}
-            className="rounded-2xl border border-border bg-card p-8"
-          >
+          <form onSubmit={handleSubmit} className="rounded-2xl border border-border bg-card p-8">
             {sent ? (
               <div className="py-12 text-center">
                 <div className="text-4xl">✦</div>
