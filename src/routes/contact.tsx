@@ -1,6 +1,57 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { createServerFn } from "@tanstack/react-start";
 import { useState } from "react";
 import { SiteLayout, SectionLabel } from "@/components/SiteLayout";
+
+type ContactData = {
+  name: string;
+  email: string;
+  type: string;
+  message: string;
+};
+
+const sendEmail = createServerFn({ method: "POST" }).handler(
+  async (input: { data: ContactData }) => {
+    const { name, email, type, message } = input.data;
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) throw new Error("RESEND_API_KEY nicht gesetzt");
+
+    const html = `
+      <div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:32px;background:#0a0a0a;color:#e5e5e5;border-radius:12px">
+        <h2 style="margin:0 0 24px;font-size:20px;color:#ffffff">Neue Projektanfrage</h2>
+        <table style="width:100%;border-collapse:collapse">
+          <tr><td style="padding:8px 0;color:#888;width:120px;vertical-align:top">Name</td><td style="padding:8px 0;color:#e5e5e5">${name}</td></tr>
+          <tr><td style="padding:8px 0;color:#888;vertical-align:top">E-Mail</td><td style="padding:8px 0"><a href="mailto:${email}" style="color:#6366f1">${email}</a></td></tr>
+          <tr><td style="padding:8px 0;color:#888;vertical-align:top">Projekttyp</td><td style="padding:8px 0;color:#e5e5e5">${type}</td></tr>
+          <tr><td style="padding:8px 0;color:#888;vertical-align:top">Nachricht</td><td style="padding:8px 0;color:#e5e5e5;white-space:pre-wrap">${message}</td></tr>
+        </table>
+        <hr style="border:none;border-top:1px solid #2a2a2a;margin:24px 0"/>
+        <p style="margin:0;font-size:12px;color:#555">re-velop.de · Kontaktformular</p>
+      </div>`;
+
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: "Kontaktformular re:velop <noreply@re-velop.de>",
+        to: "kontakt@re-velop.de",
+        reply_to: email,
+        subject: `Neue Anfrage: ${type} — ${name}`,
+        html,
+      }),
+    });
+
+    if (!res.ok) {
+      const err = await res.text();
+      throw new Error(`Resend error: ${err}`);
+    }
+
+    return { success: true };
+  },
+);
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -32,17 +83,14 @@ function ContactPage() {
     setLoading(true);
     const fd = new FormData(e.currentTarget);
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: fd.get("name"),
-          email: fd.get("email"),
-          type: fd.get("type"),
-          message: fd.get("message"),
-        }),
+      await sendEmail({
+        data: {
+          name: fd.get("name") as string,
+          email: fd.get("email") as string,
+          type: fd.get("type") as string,
+          message: fd.get("message") as string,
+        },
       });
-      if (!res.ok) throw new Error();
       setSent(true);
     } catch {
       setError("Senden fehlgeschlagen — bitte direkt per E-Mail melden.");
@@ -102,8 +150,8 @@ function ContactPage() {
                   <select
                     name="type"
                     required
-                    className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm outline-none focus:border-primary"
                     defaultValue=""
+                    className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm outline-none focus:border-primary"
                   >
                     <option value="" disabled>
                       Auswählen …
