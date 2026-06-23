@@ -154,7 +154,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       // Prefer SVG for modern browsers (sharp, scalable)
-      { rel: "icon", href: "/favicon.png", type: "image/png", sizes: "any" },
+      { rel: "icon", href: "/favicon-re.png", type: "image/png", sizes: "any" },
       { rel: "shortcut icon", href: "/favicon-re.png" },
       { rel: "apple-touch-icon", href: "/favicon-re.png", sizes: "180x180" },
       // Safari pinned tab (uses monochrome SVG, color accents)
