@@ -67,7 +67,6 @@ export interface FileRoutesByFullPath {
   '/datenschutz': typeof DatenschutzRoute
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRoute
-  '/settings': typeof SettingsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -77,7 +76,6 @@ export interface FileRoutesByTo {
   '/datenschutz': typeof DatenschutzRoute
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRoute
-  '/settings': typeof SettingsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -88,7 +86,6 @@ export interface FileRoutesById {
   '/datenschutz': typeof DatenschutzRoute
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRoute
-  '/settings': typeof SettingsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -106,7 +103,6 @@ export interface RootRouteChildren {
   DatenschutzRoute: typeof DatenschutzRoute
   ProductsRoute: typeof ProductsRoute
   ServicesRoute: typeof ServicesRoute
-  SettingsRoute: typeof SettingsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -160,13 +156,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DatenschutzRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/settings': {
-      id: '/settings'
-      path: '/settings'
-      fullPath: '/settings'
-      preLoaderRoute: typeof SettingsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -178,7 +167,6 @@ const rootRouteChildren: RootRouteChildren = {
   DatenschutzRoute: DatenschutzRoute,
   ProductsRoute: ProductsRoute,
   ServicesRoute: ServicesRoute,
-  SettingsRoute: SettingsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
