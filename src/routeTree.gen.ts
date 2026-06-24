@@ -9,7 +9,6 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as DatenschutzRouteImport } from './routes/datenschutz'
@@ -23,11 +22,7 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SettingsRoute = SettingsRouteImport.update({
-  id: '/settings',
-  path: '/settings',
-  getParentRoute: () => rootRouteImport,
-} as any)
+
 const ProductsRoute = ProductsRouteImport.update({
   id: '/products',
   path: '/products',
@@ -89,10 +84,10 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/impressum' | '/datenschutz' | '/products' | '/services' | '/settings'
+  fullPaths: '/' | '/about' | '/contact' | '/impressum' | '/datenschutz' | '/products' | '/services'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/impressum' | '/datenschutz' | '/products' | '/services' | '/settings'
-  id: '__root__' | '/' | '/about' | '/contact' | '/impressum' | '/datenschutz' | '/products' | '/services' | '/settings'
+  to: '/' | '/about' | '/contact' | '/impressum' | '/datenschutz' | '/products' | '/services'
+  id: '__root__' | '/' | '/about' | '/contact' | '/impressum' | '/datenschutz' | '/products' | '/services'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
