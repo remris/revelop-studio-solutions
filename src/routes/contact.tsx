@@ -110,7 +110,10 @@ export const Route = createFileRoute("/contact")({
       { property: "og:url", content: "https://re-velop.de/contact" },
       { property: "og:image", content: "https://re-velop.de/og-image.jpg" },
       { name: "twitter:title", content: "Kontakt — re:velop" },
-      { name: "twitter:description", content: "Schreib re:velop. Wir antworten innerhalb von 1–2 Werktagen." },
+      {
+        name: "twitter:description",
+        content: "Schreib re:velop. Wir antworten innerhalb von 1–2 Werktagen.",
+      },
     ],
     links: [{ rel: "canonical", href: "https://re-velop.de/contact" }],
   }),
@@ -138,7 +141,9 @@ function ContactPage() {
       });
       setSent(true);
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Senden fehlgeschlagen — bitte direkt per E-Mail melden.");
+      setError(
+        e instanceof Error ? e.message : "Senden fehlgeschlagen — bitte direkt per E-Mail melden.",
+      );
     } finally {
       setLoading(false);
     }

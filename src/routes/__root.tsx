@@ -209,6 +209,12 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="de" className="dark">
       <head>
         <title>re:velop — App · Web · KI · MVP</title>
+        {/* Anti-FOUC: Theme aus localStorage vor erstem Paint anwenden */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem('revelop-theme');if(t&&t!=='cyber-navy')document.documentElement.setAttribute('data-theme',t);}catch(e){}`,
+          }}
+        />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon-re.png" type="image/png" sizes="32x32" />
         <link rel="apple-touch-icon" href="/favicon-re.png" sizes="180x180" />

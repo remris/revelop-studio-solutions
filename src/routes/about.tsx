@@ -18,7 +18,11 @@ export const Route = createFileRoute("/about")({
       { property: "og:url", content: "https://re-velop.de/about" },
       { property: "og:image", content: "https://re-velop.de/og-image.jpg" },
       { name: "twitter:title", content: "Über re:velop" },
-      { name: "twitter:description", content: "Freelance App-, Web- & KI-Entwicklung. Technisch. Produktorientiert. Mit KI-Rückenwind." },
+      {
+        name: "twitter:description",
+        content:
+          "Freelance App-, Web- & KI-Entwicklung. Technisch. Produktorientiert. Mit KI-Rückenwind.",
+      },
       {
         name: "keywords",
         content:
@@ -68,9 +72,9 @@ function AboutPage() {
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground">
             re:velop entwickelt digitale Produkte von Grund auf — Apps, Web-Plattformen und
-            KI-Integrationen. Saubere Architektur, durchdachtes UX-Handwerk
-            und kurze Time-to-Market. Statt Overhead bekommst du direkten Kontakt, klare
-            Kommunikation und ausgelieferte Software.
+            KI-Integrationen. Saubere Architektur, durchdachtes UX-Handwerk und kurze
+            Time-to-Market. Statt Overhead bekommst du direkten Kontakt, klare Kommunikation und
+            ausgelieferte Software.
           </p>
           <p className="mt-4 max-w-2xl text-muted-foreground">
             KI ist dabei kein Trend, sondern ein Werkzeug — eingesetzt überall dort, wo es Prozesse

@@ -23,7 +23,8 @@ export const Route = createFileRoute("/")({
       {
         name: "keywords",
         content:
-          "Software Entwicklung, App Entwicklung, Web Entwicklung, KI Integration, Freelancer, Flutter, Next.js, Friedrichshafen, Deutschland",      },
+          "Software Entwicklung, App Entwicklung, Web Entwicklung, KI Integration, Freelancer, Flutter, Next.js, Friedrichshafen, Deutschland",
+      },
     ],
     links: [{ rel: "canonical", href: "https://re-velop.de/" }],
   }),
@@ -134,8 +135,8 @@ function HomePage() {
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-muted-foreground">
             re:velop entwickelt digitale Produkte von Grund auf — Apps, Web-Plattformen,
-            KI-Integrationen und Branding. Ein verbindlicher Ansprechpartner vom ersten
-            Konzept bis zum Deployment.
+            KI-Integrationen und Branding. Ein verbindlicher Ansprechpartner vom ersten Konzept bis
+            zum Deployment.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Link

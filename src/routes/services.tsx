@@ -18,7 +18,10 @@ export const Route = createFileRoute("/services")({
       { property: "og:url", content: "https://re-velop.de/services" },
       { property: "og:image", content: "https://re-velop.de/og-image.jpg" },
       { name: "twitter:title", content: "Leistungen — re:velop" },
-      { name: "twitter:description", content: "App-Entwicklung, Web-Plattformen, KI-Integration und MVP aus einer Hand." },
+      {
+        name: "twitter:description",
+        content: "App-Entwicklung, Web-Plattformen, KI-Integration und MVP aus einer Hand.",
+      },
       {
         name: "keywords",
         content:
@@ -35,10 +38,30 @@ export const Route = createFileRoute("/services")({
           name: "Leistungen re:velop",
           url: "https://re-velop.de/services",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "App-Entwicklung", url: "https://re-velop.de/services#app" },
-            { "@type": "ListItem", position: 2, name: "Web-Entwicklung", url: "https://re-velop.de/services#web" },
-            { "@type": "ListItem", position: 3, name: "KI-Integration", url: "https://re-velop.de/services#ki" },
-            { "@type": "ListItem", position: 4, name: "Produkt & MVP", url: "https://re-velop.de/services#mvp" },
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "App-Entwicklung",
+              url: "https://re-velop.de/services#app",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Web-Entwicklung",
+              url: "https://re-velop.de/services#web",
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: "KI-Integration",
+              url: "https://re-velop.de/services#ki",
+            },
+            {
+              "@type": "ListItem",
+              position: 4,
+              name: "Produkt & MVP",
+              url: "https://re-velop.de/services#mvp",
+            },
           ],
         }),
       },
@@ -104,8 +127,7 @@ function ServicesPage() {
           <h1 className="mt-6 max-w-3xl text-5xl font-bold md:text-6xl">Was wir für dich bauen.</h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
             Klare Leistungen, ehrliche Einschätzungen, sauberer Code. re:velop liefert App, Web, KI
-            und MVP aus einer Hand — immer auf das ausgerichtet, was dein Projekt wirklich
-            braucht.
+            und MVP aus einer Hand — immer auf das ausgerichtet, was dein Projekt wirklich braucht.
           </p>
         </div>
       </section>

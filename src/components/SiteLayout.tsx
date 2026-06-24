@@ -52,8 +52,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             <Logo />
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
               re:velop entwickelt digitale Produkte — von der App über Web-Plattformen bis hin zu
-              KI-Integration. Technisch fundiert. Schnell
-              ausgeliefert.
+              KI-Integration. Technisch fundiert. Schnell ausgeliefert.
             </p>
           </div>
           <div>
