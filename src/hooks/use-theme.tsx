@@ -1,6 +1,18 @@
 import { useState, useEffect } from "react";
 
-export type ThemeId = "cyber-navy" | "void-green" | "velvet-purple" | "ember" | "studio-light";
+export type ThemeId =
+  | "cyber-navy"
+  | "void-green"
+  | "velvet-purple"
+  | "ember"
+  | "studio-light"
+  | "rose-light"
+  | "sage-light"
+  | "amber-light"
+  | "arctic-light"
+  | "paper-light"
+  | "midnight"
+  | "carbon";
 
 const STORAGE_KEY = "revelop-theme";
 const DEFAULT_THEME: ThemeId = "cyber-navy";

@@ -66,6 +66,76 @@ const themes: {
     muted: "oklch(0.91 0.01 250)",
     foreground: "oklch(0.15 0.02 250)",
   },
+  {
+    id: "rose-light",
+    name: "Rose Light",
+    description: "Cremeweiß mit sattem Rosa-Akzent.",
+    bg: "oklch(0.99 0.004 15)",
+    primary: "oklch(0.58 0.22 15)",
+    card: "oklch(0.96 0.007 15)",
+    muted: "oklch(0.92 0.009 15)",
+    foreground: "oklch(0.18 0.02 15)",
+  },
+  {
+    id: "sage-light",
+    name: "Sage Light",
+    description: "Warmes Weiß mit ruhigem Salbei-Grün.",
+    bg: "oklch(0.98 0.006 145)",
+    primary: "oklch(0.50 0.18 145)",
+    card: "oklch(0.95 0.009 145)",
+    muted: "oklch(0.91 0.01 145)",
+    foreground: "oklch(0.17 0.02 145)",
+  },
+  {
+    id: "amber-light",
+    name: "Amber Light",
+    description: "Warmes Creme mit goldenem Bernstein-Akzent.",
+    bg: "oklch(0.98 0.012 80)",
+    primary: "oklch(0.62 0.20 60)",
+    card: "oklch(0.95 0.016 78)",
+    muted: "oklch(0.91 0.015 78)",
+    foreground: "oklch(0.18 0.025 60)",
+  },
+  {
+    id: "arctic-light",
+    name: "Arctic Light",
+    description: "Kühles Reinweiß mit Teal — modern und klar.",
+    bg: "oklch(0.985 0.003 220)",
+    primary: "oklch(0.50 0.17 215)",
+    card: "oklch(0.955 0.005 220)",
+    muted: "oklch(0.90 0.006 220)",
+    foreground: "oklch(0.12 0.015 220)",
+  },
+  {
+    id: "paper-light",
+    name: "Paper Light",
+    description: "Warmes Papier-Weiß mit dunkler Tinte.",
+    bg: "oklch(0.97 0.012 88)",
+    primary: "oklch(0.26 0.12 255)",
+    card: "oklch(0.94 0.016 88)",
+    muted: "oklch(0.90 0.015 88)",
+    foreground: "oklch(0.14 0.018 55)",
+  },
+  {
+    id: "midnight",
+    name: "Midnight",
+    description: "Tiefschwarz mit reinem Weiß — ultra-minimal.",
+    bg: "oklch(0.09 0 0)",
+    primary: "oklch(0.95 0 0)",
+    card: "oklch(0.13 0 0)",
+    muted: "oklch(0.17 0 0)",
+    foreground: "oklch(0.95 0 0)",
+  },
+  {
+    id: "carbon",
+    name: "Carbon",
+    description: "Graphit-Dunkel mit leuchtendem Coral-Akzent.",
+    bg: "oklch(0.155 0.008 250)",
+    primary: "oklch(0.68 0.22 35)",
+    card: "oklch(0.205 0.010 250)",
+    muted: "oklch(0.22 0.009 250)",
+    foreground: "oklch(0.96 0.005 250)",
+  },
 ];
 
 function ThemePreview({ t }: { t: (typeof themes)[number] }) {
@@ -124,7 +194,7 @@ function SettingsPage() {
             Klick auf ein Design — es wird sofort angewendet und im Browser gespeichert.
           </p>
 
-          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {themes.map((t) => {
               const isActive = theme === t.id;
               return (
