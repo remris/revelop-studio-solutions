@@ -49,6 +49,34 @@ const sendEmail = createServerFn({ method: "POST" }).handler(
       throw new Error(`Resend error: ${err}`);
     }
 
+    // Eingangsbestätigung an den Absender
+    await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: "re:velop <noreply@re-velop.de>",
+        to: email,
+        reply_to: "kontakt@re-velop.de",
+        subject: "Deine Anfrage ist bei uns angekommen ✦",
+        html: `
+          <div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:32px;background:#0a0a0a;color:#e5e5e5;border-radius:12px">
+            <h2 style="margin:0 0 16px;font-size:20px;color:#ffffff">Hey ${name}, danke für deine Nachricht.</h2>
+            <p style="margin:0 0 16px;color:#aaa;line-height:1.6">
+              Wir haben deine Anfrage erhalten und melden uns innerhalb von <strong style="color:#e5e5e5">1–2 Werktagen</strong> bei dir.
+            </p>
+            <p style="margin:0 0 24px;color:#aaa;line-height:1.6">
+              Falls du noch etwas ergänzen möchtest, antworte einfach auf diese Mail oder schreib uns direkt an
+              <a href="mailto:kontakt@re-velop.de" style="color:#6366f1">kontakt@re-velop.de</a>.
+            </p>
+            <hr style="border:none;border-top:1px solid #2a2a2a;margin:24px 0"/>
+            <p style="margin:0;font-size:12px;color:#555">re-velop.de · Diese Mail wurde automatisch versendet.</p>
+          </div>`,
+      }),
+    });
+
     return { success: true };
   },
 );
