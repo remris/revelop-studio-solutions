@@ -1,18 +1,24 @@
 import { useState, useEffect } from "react";
 
 export type ThemeId =
-  | "cyber-navy"
-  | "void-green"
-  | "velvet-purple"
-  | "ember"
-  | "studio-light"
-  | "rose-light"
-  | "sage-light"
-  | "amber-light"
-  | "arctic-light"
-  | "paper-light"
-  | "midnight"
-  | "carbon";
+  // CYAN
+  | "cyan-snow"
+  | "cyan-frost"
+  | "cyan-navy"
+  | "cyan-abyss"
+  // AMBER
+  | "amber-cloud"
+  | "amber-cream"
+  | "amber-dusk"
+  | "amber-coal"
+  // CORAL
+  | "coral-snow"
+  | "coral-blush"
+  | "coral-slate"
+  | "coral-void";
+// Auskommentiert: cyber-navy | void-green | velvet-purple | ember |
+// studio-light | rose-light | sage-light | amber-light |
+// arctic-light | paper-light | midnight | carbon
 
 const STORAGE_KEY = "revelop-theme";
 const DEFAULT_THEME: ThemeId = "cyber-navy";
