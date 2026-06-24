@@ -56,6 +56,16 @@ const themes: {
     muted: "oklch(0.21 0.025 50)",
     foreground: "oklch(0.97 0.01 50)",
   },
+  {
+    id: "studio-light",
+    name: "Studio Light",
+    description: "Klares Weiß mit Indigo-Akzent — hell und aufgeräumt.",
+    bg: "oklch(0.98 0.005 250)",
+    primary: "oklch(0.55 0.22 265)",
+    card: "oklch(0.95 0.008 250)",
+    muted: "oklch(0.91 0.01 250)",
+    foreground: "oklch(0.15 0.02 250)",
+  },
 ];
 
 function ThemePreview({ t }: { t: (typeof themes)[number] }) {
@@ -114,7 +124,7 @@ function SettingsPage() {
             Klick auf ein Design — es wird sofort angewendet und im Browser gespeichert.
           </p>
 
-          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {themes.map((t) => {
               const isActive = theme === t.id;
               return (
