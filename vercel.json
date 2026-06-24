@@ -1,5 +1,13 @@
 {
   "framework": null,
   "buildCommand": "bun run build",
-  "installCommand": "bun install"
+  "installCommand": "bun install",
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.re-velop.de" }],
+      "destination": "https://re-velop.de/$1",
+      "permanent": true
+    }
+  ]
 }
