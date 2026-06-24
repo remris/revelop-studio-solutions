@@ -36,9 +36,8 @@ const sendEmail = createServerFn({ method: "POST" }).handler(
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "revelop Kontaktformular <onboarding@resend.dev>",
-        // TODO: nach Domain-Verifikation → "kontakt@re-velop.de" + from "noreply@re-velop.de"
-        to: "remmele.chris@gmail.com",
+        from: "re:velop Kontaktformular <noreply@re-velop.de>",
+        to: "kontakt@re-velop.de",
         reply_to: email,
         subject: `Neue Anfrage: ${type} — ${name}`,
         html,
