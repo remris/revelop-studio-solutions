@@ -14,7 +14,21 @@ export const Route = createFileRoute("/products")({
         property: "og:description",
         content: "Die Produkt-Pipeline des Studios — transparent.",
       },
+      { property: "og:url", content: "https://re-velop.de/products" },
+      { property: "og:image", content: "https://re-velop.de/og-image.jpg" },
+      { name: "twitter:title", content: "Produkte — re:velop" },
+      {
+        name: "twitter:description",
+        content:
+          "Eigene SaaS-Produkte aus dem re:velop Studio — transparent und mit ehrlicher Roadmap.",
+      },
+      {
+        name: "keywords",
+        content:
+          "re:velop Produkte, SaaS Studio, Software Produkte, MVP, Codename Atlas, Projekt-Roadmap Software",
+      },
     ],
+    links: [{ rel: "canonical", href: "https://re-velop.de/products" }],
   }),
   component: ProductsPage,
 });

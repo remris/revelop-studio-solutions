@@ -15,6 +15,10 @@ export const Route = createFileRoute("/services")({
         property: "og:description",
         content: "App, Web und KI aus einer Hand.",
       },
+      { property: "og:url", content: "https://re-velop.de/services" },
+      { property: "og:image", content: "https://re-velop.de/og-image.jpg" },
+      { name: "twitter:title", content: "Leistungen — re:velop" },
+      { name: "twitter:description", content: "App-Entwicklung, Web-Plattformen, KI-Integration und MVP aus einer Hand." },
       {
         name: "keywords",
         content:
@@ -22,6 +26,23 @@ export const Route = createFileRoute("/services")({
       },
     ],
     links: [{ rel: "canonical", href: "https://re-velop.de/services" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Leistungen re:velop",
+          url: "https://re-velop.de/services",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "App-Entwicklung", url: "https://re-velop.de/services#app" },
+            { "@type": "ListItem", position: 2, name: "Web-Entwicklung", url: "https://re-velop.de/services#web" },
+            { "@type": "ListItem", position: 3, name: "KI-Integration", url: "https://re-velop.de/services#ki" },
+            { "@type": "ListItem", position: 4, name: "Produkt & MVP", url: "https://re-velop.de/services#mvp" },
+          ],
+        }),
+      },
+    ],
   }),
   component: ServicesPage,
 });

@@ -74,6 +74,18 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "re:velop",
+  url: "https://re-velop.de",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: "https://re-velop.de/?q={search_term_string}",
+    "query-input": "required name=search_term_string",
+  },
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -145,6 +157,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:url", content: "https://re-velop.de/" },
       { property: "og:site_name", content: "re:velop" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@revelop_de" },
+      { property: "og:image", content: "https://re-velop.de/og-image.jpg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "re:velop — App · Web · KI · MVP" },
+      { name: "twitter:image", content: "https://re-velop.de/og-image.jpg" },
       { name: "geo.region", content: "DE-BW" },
       { name: "geo.placename", content: "Friedrichshafen, Bodenseekreis" },
       { name: "geo.position", content: "47.6553;9.4786" },
@@ -172,6 +190,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         type: "application/ld+json",
         children: JSON.stringify(jsonLd),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(websiteSchema),
       },
     ],
   }),

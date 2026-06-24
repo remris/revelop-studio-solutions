@@ -4,7 +4,7 @@ import { SiteLayout, SectionLabel } from "@/components/SiteLayout";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "Über re:velop" },
+      { title: "Über re:velop — App · Web · KI Freelancer" },
       {
         name: "description",
         content:
@@ -15,6 +15,10 @@ export const Route = createFileRoute("/about")({
         property: "og:description",
         content: "Technisch. Produktorientiert. KI-gestützt.",
       },
+      { property: "og:url", content: "https://re-velop.de/about" },
+      { property: "og:image", content: "https://re-velop.de/og-image.jpg" },
+      { name: "twitter:title", content: "Über re:velop" },
+      { name: "twitter:description", content: "Freelance App-, Web- & KI-Entwicklung. Technisch. Produktorientiert. Mit KI-Rückenwind." },
       {
         name: "keywords",
         content:

@@ -64,9 +64,22 @@ const sendEmail = createServerFn({ method: "POST" }).handler(
         html: `
           <div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:32px;background:#0a0a0a;color:#e5e5e5;border-radius:12px">
             <h2 style="margin:0 0 16px;font-size:20px;color:#ffffff">Hey ${name}, danke für deine Nachricht.</h2>
-            <p style="margin:0 0 16px;color:#aaa;line-height:1.6">
+            <p style="margin:0 0 24px;color:#aaa;line-height:1.6">
               Wir haben deine Anfrage erhalten und melden uns innerhalb von <strong style="color:#e5e5e5">1–2 Werktagen</strong> bei dir.
             </p>
+            <div style="background:#111;border:1px solid #2a2a2a;border-radius:8px;padding:20px;margin:0 0 24px">
+              <p style="margin:0 0 12px;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#555">Deine Anfrage</p>
+              <table style="width:100%;border-collapse:collapse">
+                <tr>
+                  <td style="padding:6px 0;color:#666;width:110px;vertical-align:top;font-size:13px">Projekttyp</td>
+                  <td style="padding:6px 0;color:#e5e5e5;font-size:13px">${type}</td>
+                </tr>
+                <tr>
+                  <td style="padding:6px 0;color:#666;vertical-align:top;font-size:13px">Nachricht</td>
+                  <td style="padding:6px 0;color:#e5e5e5;font-size:13px;white-space:pre-wrap">${message}</td>
+                </tr>
+              </table>
+            </div>
             <p style="margin:0 0 24px;color:#aaa;line-height:1.6">
               Falls du noch etwas ergänzen möchtest, antworte einfach auf diese Mail oder schreib uns direkt an
               <a href="mailto:kontakt@re-velop.de" style="color:#6366f1">kontakt@re-velop.de</a>.
@@ -94,6 +107,10 @@ export const Route = createFileRoute("/contact")({
         property: "og:description",
         content: "Erzähl uns von deinem Projekt.",
       },
+      { property: "og:url", content: "https://re-velop.de/contact" },
+      { property: "og:image", content: "https://re-velop.de/og-image.jpg" },
+      { name: "twitter:title", content: "Kontakt — re:velop" },
+      { name: "twitter:description", content: "Schreib re:velop. Wir antworten innerhalb von 1–2 Werktagen." },
     ],
     links: [{ rel: "canonical", href: "https://re-velop.de/contact" }],
   }),

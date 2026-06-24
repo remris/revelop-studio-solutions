@@ -16,6 +16,10 @@ export const Route = createFileRoute("/")({
         property: "og:description",
         content: "Von der Idee zur produktiven Anwendung.",
       },
+      { property: "og:url", content: "https://re-velop.de/" },
+      { property: "og:image", content: "https://re-velop.de/og-image.jpg" },
+      { name: "twitter:title", content: "re:velop — App · Web · KI · MVP" },
+      { name: "twitter:description", content: "Von der Idee zur produktiven Anwendung." },
       {
         name: "keywords",
         content:
